@@ -67,7 +67,7 @@
 
 <body>
     <div class="container">
-        <img src="ao.jpg" class="image">
+        <img src="placeholder.jpg" class="image" id="mainImage">
         <canvas class="canvas"></canvas>
     </div>
 
@@ -82,7 +82,7 @@
         const password = "Aurora966";
         const canvas = document.querySelector('.canvas');
         const ctx = canvas.getContext('2d');
-        const image = document.querySelector('.image');
+        const image = document.getElementById('mainImage');
         const modal = document.getElementById('passwordModal');
         const passwordInput = document.getElementById('passwordInput');
 
@@ -109,6 +109,7 @@
                 modal.style.display = 'none';
                 canvas.addEventListener('mousemove', reveal);
                 canvas.addEventListener('touchmove', reveal);
+                image.src = "ao.jpg"; // Replace placeholder image with the actual image
             } else {
                 alert("Incorrect password!");
                 passwordInput.value = '';
